@@ -1,5 +1,6 @@
 const webpack = require("webpack")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+require("dotenv").config()
 
 module.exports = {
     entry: "./src/index.jsx",
@@ -24,6 +25,9 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery",
+        }),
+        new webpack.DefinePlugin({
+            "process.env.API_URL": JSON.stringify(process.env.API_URL) || '"http://localhost:3003/api"',
         }),
         new ExtractTextPlugin("app.css"),
     ],
