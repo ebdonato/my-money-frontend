@@ -6,7 +6,7 @@ import Content from "../common/template/content"
 import ValueBox from "../common/widget/valueBox"
 import Row from "../common/layout/row"
 
-const BASE_URL = process.env.API_URL
+import consts from "../consts"
 
 export default class Dashboard2 extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export default class Dashboard2 extends Component {
     }
 
     componentWillMount() {
-        axios.get(`${BASE_URL}/billing-cycles/summary`).then((resp) => this.setState(resp.data))
+        axios.get(`${consts.API_URL}/billing-cycles/summary`).then((resp) => this.setState(resp.data))
     }
 
     render() {

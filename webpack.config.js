@@ -27,7 +27,7 @@ module.exports = {
             "window.jQuery": "jquery",
         }),
         new webpack.DefinePlugin({
-            "process.env.API_URL": JSON.stringify(process.env.API_URL) || '"http://localhost:3003/api"',
+            "process.env.BASE_API_URL": JSON.stringify(process.env.BASE_API_URL) || '"http://localhost:3003"',
         }),
         new ExtractTextPlugin("app.css"),
     ],
